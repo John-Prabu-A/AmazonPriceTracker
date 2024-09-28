@@ -1,6 +1,9 @@
-import { router, Stack } from 'expo-router';
+import { Link, router, Stack } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+
+import loginScreen from '../(auth)/login';
+import { supabase } from '~/utils/supabase';
 
 export default function Home() {
   const performSearch = () => {
@@ -28,6 +31,8 @@ export default function Home() {
           <Text>Search</Text>
         </Pressable>
       </View>
+      <Link href="/(auth)/login">Open Auth Screen</Link>
+      <Text onPress={() => supabase.auth.signOut()}>Sign Out</Text>
     </>
   );
 }
