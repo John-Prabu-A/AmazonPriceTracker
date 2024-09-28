@@ -4,7 +4,12 @@ import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function Home() {
   const performSearch = () => {
-    console.warn('Search: ', query);
+    router.push('/search');
+
+    // save this search in database
+
+    // scrape amazon for this query
+
     setQuery('');
   };
   const [query, setQuery] = useState('');
